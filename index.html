@@ -463,6 +463,26 @@
             z-index: 1001;
             transition: width 0.3s ease;
         }
+        /* Add this to your CSS */
+            .custom-cursor {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 12px;
+            height: 12px;
+            background-color: #00ffc8;
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            transition: transform 0.15s ease-out, background-color 0.2s;
+            z-index: 9999;
+            mix-blend-mode: difference;
+        }
+
+            .custom-cursor.hovering {
+            transform: scale(2.5) translate(-50%, -50%);
+            background-color: #ff00ff;
+        }
     </style>
 </head>
 <body>
@@ -554,17 +574,17 @@
             <div class="skill-item">
                 <div class="skill-icon">⚛️</div>
                 <h3>Frontend Development</h3>
-                <p>.NET MAUI, Vue.js, c++ </p>
+                <p>.NET MAUI, HTML, C++ </p>
             </div>
             <div class="skill-item">
                 <div class="skill-icon">🚀</div>
                 <h3>Backend Development</h3>
-                <p>PHP, SQL, Python, APIs</p>
+                <p>SQL, Python, APIs</p>
             </div>
             <div class="skill-item">
                 <div class="skill-icon">🎨</div>
                 <h3>UI/UX Design</h3>
-                <p>Figma, Canva, CSS</p>
+                <p>Canva, CSS</p>
             </div>
             <!-- <div class="skill-item">
                 <div class="skill-icon">🔗</div>
@@ -593,18 +613,22 @@
     </section>
 
     <script>
-        // Custom cursor
-        const cursor = document.querySelector('.cursor');
-        const links = document.querySelectorAll('a, button, .project-card, .skill-item');
+        // JavaScript Custom cursor
+        const customCursor = document.querySelector('.custom-cursor');
+        const hoverTargets = document.querySelectorAll('a, button, .project-card, .skill-item');
 
         document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
+        customCursor.style.left = e.clientX + 'px';
+        customCursor.style.top = e.clientY + 'px';
         });
 
-        links.forEach(link => {
-            link.addEventListener('mouseenter', () => cursor.classList.add('hover'));
-            link.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+        hoverTargets.forEach(target => {
+        target.addEventListener('mouseenter', () => {
+        customCursor.classList.add('hovering');
+                });
+        target.addEventListener('mouseleave', () => {
+        customCursor.classList.remove('hovering');
+            });
         });
 
         // Navbar scroll effect
