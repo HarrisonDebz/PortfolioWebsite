@@ -35,7 +35,7 @@
         .cursor.hover {
             width: 15px;
             height: 15px;
-            background: rgba(0, 212, 255, 0.2);
+            background: #00d4ff33;
         }
 
         .navbar {
@@ -43,7 +43,7 @@
             top: 0;
             width: 100%;
             padding: 1rem 2rem;
-            background: rgba(10, 10, 10, 0.9);
+            background: #0a0a0ae6;
             backdrop-filter: blur(20px);
             z-index: 1000;
             transition: all 0.3s ease;
@@ -51,7 +51,7 @@
 
         .navbar.scrolled {
             background: rgba(10, 10, 10, 0.95);
-            border-bottom: 1px solid rgba(0, 212, 255, 0.3);
+            border-bottom: 1px solid #00d4ff4d;
         }
 
         .nav-container {
@@ -105,9 +105,9 @@
             align-items: center;
             justify-content: center;
             position: relative;
-            background: radial-gradient(circle at 20% 50%, rgba(0, 0, 0, 0.3) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 20%, rgba(78, 79, 79, 0.3) 0%, transparent 50%),
-                        radial-gradient(circle at 40% 80%, rgba(255, 255, 255, 0.3) 0%, transparent 50%);
+            background: radial-gradient(circle at 20% 50%, #0000004d 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, #4e4f4f4d 0%, transparent 50%),
+                        radial-gradient(circle at 40% 80%, #ffffff4d 0%, transparent 50%);
         }
 
         .hero-content {
@@ -156,7 +156,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            background: linear-gradient(90deg, transparent, #ffffff33, transparent);
             transition: left 0.5s ease;
         }
 
@@ -166,7 +166,7 @@
 
         .cta-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4);
+            box-shadow: 0 10px 30px #00d4ff66;
         }
 
         .floating-elements {
@@ -183,7 +183,7 @@
             position: absolute;
             width: 100px;
             height: 100px;
-            background: linear-gradient(45deg, rgba(0, 212, 255, 0.1), rgba(255, 0, 128, 0.1));
+            background: linear-gradient(45deg, #00d4ff1a, #ff00801a);
             border-radius: 50%;
             animation: float 6s ease-in-out infinite;
         }
@@ -217,11 +217,11 @@
         }
 
         .project-card {
-            background: rgba(255, 255, 255, 0.05);
+            background: #ffffff0d;
             border-radius: 20px;
             padding: 2rem;
             transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid #ffffff1a;
             position: relative;
             overflow: hidden;
         }
@@ -233,7 +233,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, rgba(0, 212, 255, 0.1), rgba(255, 0, 128, 0.1));
+            background: linear-gradient(45deg, #00d4ff1a, #ff00801a);
             opacity: 0;
             transition: opacity 0.3s ease;
         }
@@ -244,7 +244,7 @@
 
         .project-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
+            box-shadow: 0 20px 40px #00d4ff33;
         }
 
         .project-card h3 {
@@ -261,7 +261,7 @@
         }
 
         .skill-item {
-            background: rgba(255, 255, 255, 0.05);
+            background: #ffffff0d;
             padding: 2rem;
             border-radius: 15px;
             text-align: center;
@@ -328,8 +328,8 @@
         }
 
         .profile-image:hover {
-            transform: scale(1.35);
-            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.3);
+            transform: scale(1.1);
+            box-shadow: 0 20px 40px #00d4ff4d;
         }
 
         .image-overlay {
@@ -338,7 +338,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.7);
+            background: #000000b3;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -366,7 +366,7 @@
 
         .upload-btn:hover {
             transform: translateY(0px);
-            box-shadow: 0 10px 20px rgba(0, 212, 255, 0.4);
+            box-shadow: 0 10px 20px #00d4ff66;
         }
 
         .about-text {
@@ -401,11 +401,11 @@
 
         .form-group input,
         .form-group textarea {
-            width: 100%;
+            width: 50%;
             padding: 1rem;
-            border: 2px solid rgba(255, 255, 255, 0.1);
+            border: 2px solid #ffffff1a;
             border-radius: 10px;
-            background: rgba(255, 255, 255, 0.05);
+            background: #ffffff0d;
             color: #fff;
             font-size: 1rem;
             transition: all 0.3s ease;
@@ -414,8 +414,8 @@
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: #00d4ff;
-            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+            border-color: #65a0ff;
+            box-shadow: 0 0 20px #00d4ff4d;
         }
 
         .parallax-bg {
@@ -492,7 +492,7 @@
         </div>
         <div class="hero-content">
             <h1>Harrison Malisawa</h1>
-            <p>Developer. Designer. Strategist.</p>
+            <p>Developer • Designer • Strategist.</p>
             <p>Designing sleek, interactive systems built for impact and precision.</p>
             <a href="#projects" class="cta-button">View My Work</a>
         </div>
