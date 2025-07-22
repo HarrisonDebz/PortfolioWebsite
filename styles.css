@@ -234,20 +234,22 @@
       .projects-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-        gap: 2rem;
+        gap: 1rem;
         margin-top: 3rem;
       }
 
       .project-card {
         background: #ffffff0d;
         border-radius: 20px;
-        padding: 2rem;
+        padding: 1rem;
         transition: all 0.4s ease;
         border: 1px solid #ffffff1a;
         position: relative;
         overflow: hidden;
         backdrop-filter: blur(10px);
         scale: (1.03);
+        max-width: 300px;
+        margin: 0 auto;
       }
 
       .project-card h3 {
