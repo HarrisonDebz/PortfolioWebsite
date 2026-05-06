@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Harrison Malisawa - Stack</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -15,46 +21,32 @@
       <div class="nav-container">
         <div class="logo">HM</div>
         <ul class="nav-links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#home" aria-label="Navigate to Home">Home</a></li>
+          <li><a href="#about" aria-label="Navigate to About">About</a></li>
+          <li>
+            <a href="#projects" aria-label="Navigate to Projects">Projects</a>
+          </li>
+          <li>
+            <a href="#training" aria-label="Navigate to Training">Training</a>
+          </li>
+          <li><a href="#skills" aria-label="Navigate to Skills">Skills</a></li>
+          <li><a href="#contact" aria-label="Navigate to Contact">Contact</a></li>
         </ul>
-        <div class="mobile-menu">☰</div>
+        <div class="mobile-menu" role="button" aria-label="Open Mobile Menu">
+          ☰
+        </div>
       </div>
     </nav>
 
     <section id="home" class="hero">
       <div class="floating-elements">
-        <div
-          class="floating-element"
-          style="top: 10%; left: 5%; animation-delay: 0s"
-        ></div>
-        <div
-          class="floating-element"
-          style="top: 65%; right: 15%; animation-delay: 3s"
-        ></div>
-        <div
-          class="floating-element"
-          style="bottom: 20%; left: 70%; animation-delay: 1.5s"
-        ></div>
-        <div
-          class="floating-element"
-          style="top: 35%; left: 50%; animation-delay: 5s"
-        ></div>
-        <div
-          class="floating-element"
-          style="bottom: 10%; right: 25%; animation-delay: 2.3s"
-        ></div>
-        <div
-          class="floating-element"
-          style="top: 50%; right: 5%; animation-delay: 4.2s"
-        ></div>
-        <div
-          class="floating-element"
-          style="bottom: 40%; left: 15%; animation-delay: 6.5s"
-        ></div>
+        <div class="floating-element" style="--delay: 0s; --top: 10%; --left: 5%"></div>
+        <div class="floating-element" style="--delay: 3s; --top: 65%; --right: 15%"></div>
+        <div class="floating-element" style="--delay: 1.5s; --bottom: 20%; --left: 70%"></div>
+        <div class="floating-element" style="--delay: 5s; --top: 35%; --left: 50%"></div>
+        <div class="floating-element" style="--delay: 2.3s; --bottom: 10%; --right: 25%"></div>
+        <div class="floating-element" style="--delay: 4.2s; --top: 50%; --right: 5%"></div>
+        <div class="floating-element" style="--delay: 6.5s; --bottom: 40%; --left: 15%"></div>
       </div>
       <div class="hero-content">
         <h1>Harrison Malisawa</h1>
@@ -81,14 +73,14 @@
           <input type="file" id="" accept="image/*" style="display: none" />
         </div>
         <div class="about-text">
-          <p style="font-size: 1.2rem; opacity: 0.9; margin-bottom: 2rem">
+          <p class="about-lead">
             I am a strategic developer who builds with precision and purpose. I
             craft smart, interactive experiences that blend clean design with
             powerful code. With a sharp eye for detail and a mind wired for
             innovation, I don’t just write code, I engineer digital moves that
             matter.
           </p>
-          <p style="font-size: 1.1rem; opacity: 0.8">
+          <p class="about-sub">
             When I’m not coding, I’m breaking down chess positions, writing and
             reading, or deep-diving into tech that reshapes the future.
           </p>
@@ -111,10 +103,8 @@
             navigation, and leverage modern development tools to create seamless
             experiences across multiple platforms.
           </p>
-          <div style="margin-top: 1rem">
-            <span style="color: #bfc4ff; font-size: 0.9rem"
-              >C# • XAML • HTML:5</span
-            >
+          <div class="project-tags">
+            <span>C# • XAML • HTML:5</span>
           </div>
         </div>
         <div class="project-card">
@@ -122,10 +112,8 @@
           <p>
             EventPulse is a campus-focused event management app built with .NET MAUI.  A cross-platform framework that lets us ship native apps for Android, Windows, and more from one codebase, to fix how university events are handled - from scattered WhatsApp posters and word-of-mouth chaos to a centralized, smart event hub.
           </p>
-          <div style="margin-top: 1rem">
-            <span style="color: #bfc4ff; font-size: 0.9rem"
-              >C# • XAML • HTML:5</span
-            >
+          <div class="project-tags">
+            <span>C# • XAML • HTML:5</span>
           </div>
         </div>
         <div class="project-card">
@@ -138,28 +126,72 @@
             The project reflects my growing focus in cybersecurity, blending
             practical web dev skills with vulnerability detection logic.
           </p>
-          <div style="margin-top: 1rem">
-            <span style="color: #bfc4ff; font-size: 0.9rem"
-              >JavaScript • Node.js • AXIOS • JSDOM</span
-            >
+          <div class="project-tags">
+            <span>JavaScript • Node.js • AXIOS • JSDOM</span>
           </div>
         </div>
         <div class="project-card">
-          <h3>Konda – Campus Dating App (In Development)</h3>
+          <h3>CAT - Attendance Tracker</h3>
           <p>
-            Konda is a university-focused dating app built to foster authentic,
-            emotionally intelligent connections within student communities.
-            Unlike swipe-heavy mainstream apps, Konda prioritizes meaningful
-            engagement, emotional awareness, and campus safety. Users can
-            connect based on shared values, interests, and goals. . . Not just
-            surface-level bios. Currently in development, Konda blends tech with
-            emotional design to help students build real, intentional
-            relationships in a fast-paced digital age.
+            The Class Attendance Tracker (CAT) is a production-grade mobile solution built with .NET MAUI and Supabase. It automates academic management with real-time data sync, role-based access for lecturers and students, and intuitive dashboard reporting. It solves the complexity of manual attendance with a single, secure digital hub.
           </p>
-          <div style="margin-top: 1rem">
-            <span style="color: #bfc4ff; font-size: 0.9rem"
-              >C# • .NET MAUI • XAML • MongoDB</span
-            >
+          <div class="project-tags">
+            <span>.NET MAUI • C# • Supabase • XAML</span>
+          </div>
+        </div>
+        <div class="project-card">
+          <h3>Client Web Designs</h3>
+          <p>
+            A curated collection of bespoke web solutions crafted for diverse business needs. These projects prioritize accessibility, modern SEO practices, and custom design systems. Built with high-performance logic and sleek aesthetics to ensure an impactful and memorable digital presence across any device.
+          </p>
+          <div class="project-tags">
+            <span>HTML5 • CSS3 • JavaScript • Responsive Design</span>
+          </div>
+        </div>
+        <div class="project-card">
+          <h3>Command Line Apps</h3>
+          <p>
+            Precision-engineered CLI tools designed for speed and technical efficiency. This suite includes automated security auditing scripts, system utilities, and data processing tools. Built to perform complex operations through lean terminal interfaces, emphasizing logic-driven design and resource optimization.
+          </p>
+          <div class="project-tags">
+            <span>Python • C++ • Bash • Automation</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="training" class="section">
+      <h2 class="section-title">Training & Collaboration</h2>
+      <div class="bento-grid">
+        <div class="bento-item featured">
+          <div class="bento-content">
+            <div class="bento-icon">🚀</div>
+            <h3>Fresh Space</h3>
+            <p>
+              Collaborating on modern, sustainable digital environments and
+              innovative web spaces. This partnership focuses on merging clean
+              minimalism with high-performance code to create interactive spaces
+              that resonate with a global audience.
+            </p>
+            <div class="bento-tag">Active Collaboration</div>
+          </div>
+        </div>
+        <div class="bento-item">
+          <div class="bento-content">
+            <div class="bento-icon">💳</div>
+            <h3>FinTech Solutions</h3>
+            <p>
+              Deep-diving into the intersection of finance and technology.
+              Developing secure, scalable integrations for digital transactions
+              and modern personal financial management tools.
+            </p>
+            <div class="bento-tag">Strategic Development</div>
+          </div>
+        </div>
+        <div class="bento-item small">
+          <div class="bento-content">
+            <div class="bento-icon">🧠</div>
+            <h3>Strategic Planning</h3>
+            <p>Refining digital moves that matter through constant iteration and architectural foresight.</p>
           </div>
         </div>
       </div>
@@ -183,11 +215,6 @@
           <h3>UI/UX Design</h3>
           <p>Canva, CSS</p>
         </div>
-        <!-- <div class="skill-item">
-                <div class="skill-icon">🔗</div>
-                <h3>Blockchain</h3>
-                <p>Ethereum, Web3.js, Smart Contracts</p>
-            </div> -->
       </div>
     </section>
 
@@ -201,18 +228,27 @@
           in.
         </p>
         <div class="contact-methods">
-          <a href="mailto:harrythaprogrammer@gmail.com" class="contact-method">
+          <a
+            href="mailto:harrythaprogrammer@gmail.com"
+            class="contact-method"
+            aria-label="Send me an email"
+          >
             <span class="contact-icon">📧</span>
             <span class="contact-label">Email</span>
           </a>
           <a
             href="https://www.linkedin.com/in/harrison-malisawa"
             class="contact-method"
+            aria-label="Visit my LinkedIn profile"
           >
             <span class="contact-icon">🔗</span>
             <span class="contact-label">LinkedIn</span>
           </a>
-          <a href="https://github.com/HarrisonDebz" class="contact-method">
+          <a
+            href="https://github.com/HarrisonDebz"
+            class="contact-method"
+            aria-label="Visit my GitHub profile"
+          >
             <span class="contact-icon">🐙</span>
             <span class="contact-label">GitHub</span>
           </a>
