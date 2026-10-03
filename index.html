@@ -15,7 +15,9 @@
   <meta name="twitter:title" content="Harrison Malisawa — Software Developer &amp; Cybersecurity Analyst" />
   <meta name="twitter:description"
     content="Building precision-engineered systems across mobile, web, and security domains." />
-  <link rel="icon" type="image/svg+xml" href="Resources/favicon.svg" />
+  <link rel="icon" type="image/png" href="Resources/favicon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="Resources/favicon-32x32.png" />
+  <link rel="apple-touch-icon" href="Resources/favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -30,6 +32,9 @@
 
   <!-- Scroll Progress Indicator -->
   <div class="scroll-indicator" aria-hidden="true"></div>
+
+  <!-- Subtle Cybersecurity Background Motif Canvas -->
+  <canvas id="cyber-bg" class="cyber-bg" aria-hidden="true"></canvas>
 
   <!-- ============================================================
          NAVBAR
@@ -161,80 +166,76 @@
           <div class="case-study-index-tag">EXP // 01</div>
         </div>
 
-        <header class="case-study-header">
-          <h3 class="case-study-title">WebVal Analyzer</h3>
-          <p class="case-study-subtitle">Automated Website Security &amp; Vulnerability Inspector</p>
-        </header>
+        <div class="case-study-grid">
+          <div class="case-study-info">
+            <header class="case-study-header">
+              <h3 class="case-study-title">WebVal Analyzer</h3>
+              <p class="case-study-subtitle">Automated Website Security &amp; Vulnerability Inspector</p>
+            </header>
 
-        <p class="case-study-desc">
-          A modular, high-throughput dependency and header vulnerability analysis engine designed to evaluate web
-          configurations, security headers, and client attack vectors in under 2 seconds.
-        </p>
+            <p class="case-study-desc">
+              A modular, high-throughput dependency and header vulnerability analysis engine designed to evaluate web
+              configurations, security headers, and client attack vectors in under 2 seconds.
+            </p>
 
-        <!-- Chat & Stitch Metrics Ribbon -->
-        <div class="metrics-strip">
-          <div class="metric-box">
-            <div class="metric-value emerald-val">&lt; 1.8s</div>
-            <div class="metric-label">Mean Audit Latency</div>
-          </div>
-          <div class="metric-box">
-            <div class="metric-value">0 KB</div>
-            <div class="metric-label">Native Bindings</div>
-          </div>
-          <div class="metric-box">
-            <div class="metric-value">Zero-Config</div>
-            <div class="metric-label">CLI Inspection Engine</div>
-          </div>
-        </div>
-
-        <!-- Diagnostic Terminal Preview Box (Stitch Component) -->
-        <div class="diagnostic-terminal" aria-label="WebVal Diagnostic Probe Preview">
-          <div class="terminal-header">
-            <div class="terminal-dots">
-              <span class="terminal-dot dot-red"></span>
-              <span class="terminal-dot dot-yellow"></span>
-              <span class="terminal-dot dot-green"></span>
+            <div class="metrics-strip">
+              <div class="metric-box">
+                <div class="metric-value emerald-val">&lt; 1.8s</div>
+                <div class="metric-label">Audit Latency</div>
+              </div>
+              <div class="metric-box">
+                <div class="metric-value">0 KB</div>
+                <div class="metric-label">Native Bindings</div>
+              </div>
+              <div class="metric-box">
+                <div class="metric-value">Zero-Config</div>
+                <div class="metric-label">CLI Engine</div>
+              </div>
             </div>
-            <span class="terminal-title">webval-cli -- PROBE v1.4.0</span>
-            <span class="terminal-status-tag">ACTIVE</span>
+
+            <div class="chip-row">
+              <span class="chip">JavaScript</span>
+              <span class="chip">Node.js</span>
+              <span class="chip">Axios</span>
+              <span class="chip">JSDOM</span>
+              <span class="chip">Security Auditing</span>
+            </div>
+
+            <footer class="case-study-footer">
+              <div class="case-study-links">
+                <button type="button" class="btn-primary btn-sm" id="open-webval-modal">
+                  Inspect Case Study &rarr;
+                </button>
+                <a href="https://github.com/HarrisonDebz/Web-Val-Scanner" target="_blank" rel="noopener noreferrer"
+                  class="btn-ghost btn-sm">
+                  Source Code &#x2197;
+                </a>
+              </div>
+            </footer>
           </div>
-          <div class="terminal-body">
-            <div class="terminal-line"><span class="term-dim">$</span> <span class="term-cmd">webval analyze
-                https://target-audit.live --comprehensive</span></div>
-            <div class="terminal-line"><span class="term-tag">[INIT]</span> Initializing asynchronous probe dispatch via
-              Axios...</div>
-            <div class="terminal-line"><span class="term-tag">[HTTP]</span> Handshake resolved: <span
-                class="term-ok">200 OK</span> (142ms)</div>
-            <div class="terminal-line"><span class="term-tag">[DOM]</span> Synthesized JSDOM tree with 1,420 nodes</div>
-            <div class="terminal-line"><span class="term-dim">HEADER CONFIGURATION AUDIT:</span></div>
-            <div class="terminal-line"> Content-Security-Policy: <span class="term-warn">&#9888; MISSING</span></div>
-            <div class="terminal-line"> X-Frame-Options (Clickjacking): <span class="term-ok">&#10003; DENY</span></div>
-            <div class="terminal-line"> Strict-Transport-Security: <span class="term-ok">&#10003;
-                max-age=31536000</span></div>
-            <div class="terminal-line"><span class="term-tag">[STATUS]</span> <span class="term-ok">AUDIT
-                COMPLETE:</span> 1.49s &mdash; 1 warning flagged</div>
+
+          <div class="case-study-preview">
+            <div class="diagnostic-terminal" aria-label="WebVal Diagnostic Probe Preview">
+              <div class="terminal-header">
+                <div class="terminal-dots">
+                  <span class="terminal-dot dot-red"></span>
+                  <span class="terminal-dot dot-yellow"></span>
+                  <span class="terminal-dot dot-green"></span>
+                </div>
+                <span class="terminal-title">webval-cli -- PROBE v1.4.0</span>
+                <span class="terminal-status-tag">ACTIVE</span>
+              </div>
+              <div class="terminal-body">
+                <div class="terminal-line"><span class="term-dim">$</span> <span class="term-cmd">webval analyze https://target-audit.live</span></div>
+                <div class="terminal-line"><span class="term-tag">[INIT]</span> Asynchronous probe dispatch via Axios...</div>
+                <div class="terminal-line"><span class="term-tag">[HTTP]</span> Handshake resolved: <span class="term-ok">200 OK</span> (142ms)</div>
+                <div class="terminal-line"><span class="term-tag">[DOM]</span> Synthesized JSDOM tree: 1,420 nodes</div>
+                <div class="terminal-line"><span class="term-dim">AUDIT:</span> CSP: <span class="term-warn">&#9888; MISSING</span> | HSTS: <span class="term-ok">&#10003; 31536000</span></div>
+                <div class="terminal-line"><span class="term-tag">[STATUS]</span> <span class="term-ok">AUDIT COMPLETE:</span> 1.49s &mdash; 1 warning flagged</div>
+              </div>
+            </div>
           </div>
         </div>
-
-        <div class="chip-row">
-          <span class="chip">JavaScript</span>
-          <span class="chip">Node.js</span>
-          <span class="chip">Axios</span>
-          <span class="chip">JSDOM</span>
-          <span class="chip">Security Auditing</span>
-        </div>
-
-        <footer class="case-study-footer">
-          <div class="case-study-links">
-            <button type="button" class="btn-primary btn-sm" id="open-webval-modal">
-              Inspect Case Study &rarr;
-            </button>
-            <a href="https://github.com/HarrisonDebz/Web-Val-Scanner" target="_blank" rel="noopener noreferrer"
-              class="btn-ghost btn-sm">
-              Source Code &#x2197;
-            </a>
-          </div>
-        </footer>
       </article>
 
       <!-- 2. CAT — Attendance Tracker -->
@@ -244,74 +245,73 @@
           <div class="case-study-index-tag">EXP // 02</div>
         </div>
 
-        <header class="case-study-header">
-          <h3 class="case-study-title">CAT &mdash; Academic Attendance System</h3>
-          <p class="case-study-subtitle">Barcode-Driven Academic Attendance Platform</p>
-        </header>
+        <div class="case-study-grid">
+          <div class="case-study-info">
+            <header class="case-study-header">
+              <h3 class="case-study-title">CAT &mdash; Academic Attendance System</h3>
+              <p class="case-study-subtitle">Barcode-Driven Academic Attendance Platform</p>
+            </header>
 
-        <p class="case-study-desc">
-          Production-grade cross-platform mobile solution replacing paper registers with high-speed barcode scanning,
-          automated attendance tracking, and real-time dashboard analytics.
-        </p>
+            <p class="case-study-desc">
+              Production-grade cross-platform mobile solution replacing paper registers with high-speed barcode scanning,
+              automated attendance tracking, and real-time dashboard analytics.
+            </p>
 
-        <!-- Chat & Stitch Metrics Ribbon -->
-        <div class="metrics-strip">
-          <div class="metric-box">
-            <div class="metric-value emerald-val">95.9%</div>
-            <div class="metric-label">Attendance Capture Rate</div>
-          </div>
-          <div class="metric-box">
-            <div class="metric-value">&lt; 150ms</div>
-            <div class="metric-label">Mean Scan Latency</div>
-          </div>
-          <div class="metric-box">
-            <div class="metric-value">Real-Time</div>
-            <div class="metric-label">Supabase Sync Engine</div>
-          </div>
-        </div>
-
-        <!-- Diagnostic Telemetry Preview Box -->
-        <div class="diagnostic-terminal" aria-label="CAT Telemetry Preview">
-          <div class="terminal-header">
-            <div class="terminal-dots">
-              <span class="terminal-dot dot-red"></span>
-              <span class="terminal-dot dot-yellow"></span>
-              <span class="terminal-dot dot-green"></span>
+            <div class="metrics-strip">
+              <div class="metric-box">
+                <div class="metric-value emerald-val">95.9%</div>
+                <div class="metric-label">Capture Rate</div>
+              </div>
+              <div class="metric-box">
+                <div class="metric-value">&lt; 150ms</div>
+                <div class="metric-label">Mean Latency</div>
+              </div>
+              <div class="metric-box">
+                <div class="metric-value">Real-Time</div>
+                <div class="metric-label">Supabase Sync</div>
+              </div>
             </div>
-            <span class="terminal-title">CAT_SYNC_DAEMON // Supabase Realtime</span>
-            <span class="terminal-status-tag">SYNC: LIVE</span>
+
+            <div class="chip-row">
+              <span class="chip">.NET MAUI</span>
+              <span class="chip">C#</span>
+              <span class="chip">Supabase</span>
+              <span class="chip">XAML</span>
+              <span class="chip">Android</span>
+              <span class="chip">Windows</span>
+            </div>
+
+            <footer class="case-study-footer">
+              <div class="case-study-links">
+                <a href="https://github.com/Zakir176/BAS-Web" target="_blank" rel="noopener noreferrer"
+                  class="btn-ghost btn-sm">
+                  Source Code &#x2197;
+                </a>
+              </div>
+            </footer>
           </div>
-          <div class="terminal-body">
-            <div class="terminal-line"><span class="term-tag">[SESSION #402]</span> Lecture: Computer Networks &mdash;
-              Room LT-4</div>
-            <div class="terminal-line"><span class="term-tag">[ENROLLED]</span> Total: 148 | Scanned Present: <span
-                class="term-ok">142 (95.9%)</span></div>
-            <div class="terminal-line"><span class="term-tag">[AUTH]</span> Lecturer token verified // Role: <span
-                class="term-ok">ELEC_DEPT</span></div>
-            <div class="terminal-line"><span class="term-tag">[METRIC]</span> Mean scan latency: <span
-                class="term-ok">120ms</span> / barcode</div>
-            <div class="terminal-line"><span class="term-tag">[SYNC]</span> Cloud state synchronized with Supabase
-              Postgres</div>
+
+          <div class="case-study-preview">
+            <div class="diagnostic-terminal" aria-label="CAT Telemetry Preview">
+              <div class="terminal-header">
+                <div class="terminal-dots">
+                  <span class="terminal-dot dot-red"></span>
+                  <span class="terminal-dot dot-yellow"></span>
+                  <span class="terminal-dot dot-green"></span>
+                </div>
+                <span class="terminal-title">CAT_SYNC_DAEMON // Supabase Realtime</span>
+                <span class="terminal-status-tag">SYNC: LIVE</span>
+              </div>
+              <div class="terminal-body">
+                <div class="terminal-line"><span class="term-tag">[SESSION #402]</span> Lecture: Computer Networks &mdash; Room LT-4</div>
+                <div class="terminal-line"><span class="term-tag">[ENROLLED]</span> Total: 148 | Scanned Present: <span class="term-ok">142 (95.9%)</span></div>
+                <div class="terminal-line"><span class="term-tag">[AUTH]</span> Lecturer token verified // Role: <span class="term-ok">ELEC_DEPT</span></div>
+                <div class="terminal-line"><span class="term-tag">[METRIC]</span> Mean scan latency: <span class="term-ok">120ms</span> / barcode</div>
+                <div class="terminal-line"><span class="term-tag">[SYNC]</span> Cloud state synchronized with Supabase Postgres</div>
+              </div>
+            </div>
           </div>
         </div>
-
-        <div class="chip-row">
-          <span class="chip">.NET MAUI</span>
-          <span class="chip">C#</span>
-          <span class="chip">Supabase</span>
-          <span class="chip">XAML</span>
-          <span class="chip">Android</span>
-          <span class="chip">Windows</span>
-        </div>
-
-        <footer class="case-study-footer">
-          <div class="case-study-links">
-            <a href="https://github.com/Zakir176/BAS-Web" target="_blank" rel="noopener noreferrer"
-              class="btn-ghost btn-sm">
-              Source Code &#x2197;
-            </a>
-          </div>
-        </footer>
       </article>
 
       <!-- 3. EventPulse -->
@@ -321,70 +321,71 @@
           <div class="case-study-index-tag">EXP // 03</div>
         </div>
 
-        <header class="case-study-header">
-          <h3 class="case-study-title">EventPulse</h3>
-          <p class="case-study-subtitle">Campus-Focused Event Management Platform</p>
-        </header>
+        <div class="case-study-grid">
+          <div class="case-study-info">
+            <header class="case-study-header">
+              <h3 class="case-study-title">EventPulse</h3>
+              <p class="case-study-subtitle">Campus-Focused Event Management Platform</p>
+            </header>
 
-        <p class="case-study-desc">
-          Centralised multi-faculty event discovery and RSVP management engine built in .NET MAUI, eliminating
-          fragmented communication silos across student communities.
-        </p>
+            <p class="case-study-desc">
+              Centralised multi-faculty event discovery and RSVP management engine built in .NET MAUI, eliminating
+              fragmented communication silos across student communities.
+            </p>
 
-        <!-- Chat & Stitch Metrics Ribbon -->
-        <div class="metrics-strip">
-          <div class="metric-box">
-            <div class="metric-value emerald-val">Single Codebase</div>
-            <div class="metric-label">Cross-Platform Native</div>
-          </div>
-          <div class="metric-box">
-            <div class="metric-value">Zero Silos</div>
-            <div class="metric-label">Central Campus Hub</div>
-          </div>
-          <div class="metric-box">
-            <div class="metric-value">Live Feeds</div>
-            <div class="metric-label">RSVP &amp; Push Dispatch</div>
-          </div>
-        </div>
-
-        <!-- Diagnostic Dispatch Preview Box -->
-        <div class="diagnostic-terminal" aria-label="EventPulse Dispatch Preview">
-          <div class="terminal-header">
-            <div class="terminal-dots">
-              <span class="terminal-dot dot-red"></span>
-              <span class="terminal-dot dot-yellow"></span>
-              <span class="terminal-dot dot-green"></span>
+            <div class="metrics-strip">
+              <div class="metric-box">
+                <div class="metric-value emerald-val">Single Code</div>
+                <div class="metric-label">Cross-Platform</div>
+              </div>
+              <div class="metric-box">
+                <div class="metric-value">Zero Silos</div>
+                <div class="metric-label">Campus Hub</div>
+              </div>
+              <div class="metric-box">
+                <div class="metric-value">Live Feeds</div>
+                <div class="metric-label">Push Dispatch</div>
+              </div>
             </div>
-            <span class="terminal-title">EVENT_ROUTER // Campus Dispatch</span>
-            <span class="terminal-status-tag">ACTIVE</span>
+
+            <div class="chip-row">
+              <span class="chip">.NET MAUI</span>
+              <span class="chip">C#</span>
+              <span class="chip">Android</span>
+              <span class="chip">Windows</span>
+              <span class="chip">XAML</span>
+            </div>
+
+            <footer class="case-study-footer">
+              <div class="case-study-links">
+                <a href="http://github.com/HarrisonDebz/EventPulse" target="_blank" rel="noopener noreferrer"
+                  class="btn-ghost btn-sm">
+                  Source Code &#x2197;
+                </a>
+              </div>
+            </footer>
           </div>
-          <div class="terminal-body">
-            <div class="terminal-line"><span class="term-tag">[DISPATCH]</span> Target Faculty: Engineering &amp;
-              Computing</div>
-            <div class="terminal-line"><span class="term-tag">[FEED]</span> Aggregated 14 verified campus events</div>
-            <div class="terminal-line"><span class="term-tag">[RSVP]</span> Real-time attendance capacity check: <span
-                class="term-ok">VALIDATED</span></div>
-            <div class="terminal-line"><span class="term-tag">[NOTIF]</span> Notification dispatch queued to <span
-                class="term-ok">1,240 subscribers</span></div>
+
+          <div class="case-study-preview">
+            <div class="diagnostic-terminal" aria-label="EventPulse Dispatch Preview">
+              <div class="terminal-header">
+                <div class="terminal-dots">
+                  <span class="terminal-dot dot-red"></span>
+                  <span class="terminal-dot dot-yellow"></span>
+                  <span class="terminal-dot dot-green"></span>
+                </div>
+                <span class="terminal-title">EVENT_ROUTER // Campus Dispatch</span>
+                <span class="terminal-status-tag">ACTIVE</span>
+              </div>
+              <div class="terminal-body">
+                <div class="terminal-line"><span class="term-tag">[DISPATCH]</span> Target Faculty: Engineering &amp; Computing</div>
+                <div class="terminal-line"><span class="term-tag">[FEED]</span> Aggregated 14 verified campus events</div>
+                <div class="terminal-line"><span class="term-tag">[RSVP]</span> Real-time attendance capacity check: <span class="term-ok">VALIDATED</span></div>
+                <div class="terminal-line"><span class="term-tag">[NOTIF]</span> Notification dispatch queued to <span class="term-ok">1,240 subscribers</span></div>
+              </div>
+            </div>
           </div>
         </div>
-
-        <div class="chip-row">
-          <span class="chip">.NET MAUI</span>
-          <span class="chip">C#</span>
-          <span class="chip">Android</span>
-          <span class="chip">Windows</span>
-          <span class="chip">XAML</span>
-        </div>
-
-        <footer class="case-study-footer">
-          <div class="case-study-links">
-            <a href="http://github.com/HarrisonDebz/EventPulse" target="_blank" rel="noopener noreferrer"
-              class="btn-ghost btn-sm">
-              Source Code &#x2197;
-            </a>
-          </div>
-        </footer>
       </article>
 
       <!-- Secondary Projects Header & Grid -->
@@ -644,13 +645,17 @@
           it&rsquo;s meaningful, strategic, and engineered from first principles, let&rsquo;s talk.
         </p>
         <div class="contact-methods reveal-item">
-          <a href="mailto:harrythaprogrammer@gmail.com" class="contact-method" id="contact-email"
-            aria-label="Send email to Harry">
+          <a href="mailto:harrythaprogrammer@gmail.com?subject=Engineering%20Inquiry" class="contact-method" id="contact-email"
+            aria-label="Send email to Harrison">
             <div class="contact-method-header">
               <span class="contact-method-label">Direct Email</span>
               <span class="contact-method-arrow">&#x2197;</span>
             </div>
-            <span class="contact-method-value">harrythaprogrammer@gmail.com</span>
+            <div class="contact-method-badge" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+              </svg>
+            </div>
           </a>
           <a href="https://www.linkedin.com/in/harrison-malisawa" class="contact-method" id="contact-linkedin"
             target="_blank" rel="noopener noreferrer" aria-label="Visit LinkedIn profile">
@@ -658,7 +663,11 @@
               <span class="contact-method-label">LinkedIn</span>
               <span class="contact-method-arrow">&#x2197;</span>
             </div>
-            <span class="contact-method-value">harrison-malisawa</span>
+            <div class="contact-method-badge" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+              </svg>
+            </div>
           </a>
           <a href="https://github.com/HarrisonDebz" class="contact-method" id="contact-github" target="_blank"
             rel="noopener noreferrer" aria-label="Visit GitHub profile">
@@ -666,17 +675,11 @@
               <span class="contact-method-label">GitHub</span>
               <span class="contact-method-arrow">&#x2197;</span>
             </div>
-            <span class="contact-method-value">HarrisonDebz</span>
-          </a>
-        </div>
-
-        <div class="contact-quick-action reveal-item">
-          <div class="quick-action-text">
-            <h4>Drop a Hello</h4>
-            <p>Initiate a direct conversation via email</p>
-          </div>
-          <a href="mailto:harrythaprogrammer@gmail.com?subject=Engineering%20Inquiry" class="btn-primary">
-            Email Directly &rarr;
+            <div class="contact-method-badge" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943" />
+              </svg>
+            </div>
           </a>
         </div>
       </div>
@@ -688,40 +691,6 @@
          ============================================================ -->
   <footer class="footer" role="contentinfo">
     <div class="footer-inner">
-      <div class="footer-top">
-        <a href="#home" class="footer-logo" aria-label="Back to top">
-          <img src="Resources/Dev Logo-light.png" alt="Steezy Dev" class="logo-img" />
-        </a>
-        <nav class="footer-nav" aria-label="Footer navigation">
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#projects">Projects</a>
-          <a href="#experience">Experience</a>
-          <a href="#skills">Skills</a>
-          <a href="#contact">Contact</a>
-        </nav>
-        <div class="footer-socials">
-          <a href="https://github.com/HarrisonDebz" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path
-                d="M10.226 17.284c-2.965-.36-5.054-2.493-5.054-5.256 0-1.123.404-2.336 1.078-3.144-.292-.741-.247-2.314.09-2.965.898-.112 2.111.36 2.83 1.01.853-.269 1.752-.404 2.853-.404 1.1 0 1.999.135 2.807.382.696-.629 1.932-1.1 2.83-.988.315.606.36 2.179.067 2.942.72.854 1.101 2 1.101 3.167 0 2.763-2.089 4.852-5.098 5.234.763.494 1.28 1.572 1.28 2.807v2.336c0 .674.561 1.056 1.235.786 4.066-1.55 7.255-5.615 7.255-10.646C23.5 6.188 18.334 1 11.978 1 5.62 1 .5 6.188.5 12.545c0 4.986 3.167 9.12 7.435 10.669.606.225 1.19-.18 1.19-.786V20.63a2.9 2.9 0 0 1-1.078.224c-1.483 0-2.359-.808-2.987-2.313-.247-.607-.517-.966-1.034-1.033-.27-.023-.359-.135-.359-.27 0-.27.45-.471.898-.471.652 0 1.213.404 1.797 1.235.45.651.921.943 1.483.943.561 0 .92-.202 1.437-.719.382-.381.674-.718.944-.943" />
-            </svg>
-          </a>
-          <a href="https://www.linkedin.com/in/harrison-malisawa" target="_blank" rel="noopener noreferrer"
-            aria-label="LinkedIn">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path
-                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-            </svg>
-          </a>
-          <a href="mailto:harrythaprogrammer@gmail.com" aria-label="Email">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path
-                d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-            </svg>
-          </a>
-        </div>
-      </div>
       <div class="footer-bottom">
         <p class="footer-copy">&copy; 2026 Harrison Malisawa &mdash; Syntax brought to life.</p>
         <a href="#home" class="footer-back-top" aria-label="Scroll back to top">Back to top &uarr;</a>
@@ -913,6 +882,7 @@
   </div>
 
   <!-- Scripts -->
+  <script src="globe.js"></script>
   <script src="scripts.js"></script>
 </body>
 
