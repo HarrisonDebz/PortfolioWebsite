@@ -237,4 +237,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  // === 9. Subtle Cybersecurity Background Motif Canvas ===
+  // Delegated to dedicated globe.js module (3D holographic vector globe with pulse-traced continents)
 });
